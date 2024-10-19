@@ -32,8 +32,8 @@
 // console.log(typeof(verdadero));
 
 /// Operaciones Matematicas
-let numeroA = 10;
-let numeroB = 2;
+// let numeroA = 10;
+// let numeroB = 2;
 
 // let suma = numeroA + numeroB; // Operacion suma
 // let resta = numeroA - numeroB; // Operacion resta
@@ -57,8 +57,60 @@ let numeroB = 2;
 // console.log(resultado);
 
 
-console.log(numeroA + numeroB);
-console.log(numeroA - numeroB);
-console.log(numeroA * numeroB);
-console.log(numeroA / numeroB);
+// console.log(numeroA + numeroB);
+// console.log(numeroA - numeroB);
+// console.log(numeroA * numeroB);
+// console.log(numeroA / numeroB);
 
+// Uso de prompt, de alert y de confirm
+
+// alert("Hola gente");
+
+
+// let numeroA = prompt("Ingrese un Numero");
+// console.log(numeroA);
+// let nombre = prompt("Ingrese su nombre");
+// // console.log(nombre);
+// alert(nombre);
+
+
+// let numeroA = parseFloat(prompt("Ingrese un Numero A")); // Los prompt siempre guarda un string
+// let numeroB = parseFloat(prompt("Ingrese un Numero B"));
+// console.log(typeof(numeroA));
+// console.log(typeof(numeroB));
+//alert("El resultado es: " + numeroA + numeroB); // Estamos concatenado
+
+// let resultado = numeroA + numeroB
+// alert("El resultado es: " + resultado);
+
+// alert("El resultado es: " + (numeroA + numeroB));
+
+// let nombre = prompt("Ingrese su nombre");
+// let edad = parseInt(prompt("Ingrese su Edad"));
+
+// let confimacion = confirm("¿Es correcta la Información? " + "Nombre: " + nombre + " Edad: " + edad);
+
+// if(confimacion){
+//     alert("Hola, " + nombre + ", tu edad es: " + edad + " años");
+// } else {
+//     alert("Gracias por participar.!!")
+// }
+
+// let mensaje = "Hola, " + nombre + ", tu edad es: " + edad + " años";
+// console.log(typeof(mensaje));
+
+// console.log(typeof(confimacion));
+
+let nombreDelUsuario = "Alejandro"; // Solucionado
+let edadDelUsuario = 48;
+let mensaje = "Hola, " + nombreDelUsuario + "! Tenes " + edadDelUsuario + " años.";
+console.log(mensaje);
+
+nombreDelUsuario = "Luis";
+edadDelUsuario = 40;
+mensaje = "Hola, " + nombreDelUsuario + "! Tenes " + edadDelUsuario + " años.";
+console.log(mensaje);
+
+console.log(parseInt('12.55')); // Convierte a Numero Entero
+
+console.log(parseFloat('12.55')); // Convierte a Numero con Decimales
