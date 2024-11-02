@@ -185,37 +185,49 @@
 
 // Hagamos lo mismo pero agregando do while
 
-const calcular = (operacion, a, b) => {
-    switch (operacion) {
-        case "+":
-            return a + b
-        case "-":
-            return a - b
-        case "*":
-            return a * b
-        case "/":
-            if (b === 0) { // Compara si ambos valores son estricamente iguales
-                return console.error("Error, No se puede dividir por cero")
-            } else {
-                return a / b;
-            }
-        default:
-            return console.error("Error, Ingrese una Operacion valida.!")
-    }
-};
+// const calcular = (operacion, a, b) => {
+//     switch (operacion) {
+//         case "+":
+//             return a + b
+//         case "-":
+//             return a - b
+//         case "*":
+//             return a * b
+//         case "/":
+//             if (b === 0) { // Compara si ambos valores son estricamente iguales
+//                 return console.error("Error, No se puede dividir por cero")
+//             } else {
+//                 return a / b;
+//             }
+//         default:
+//             return console.error("Error, Ingrese una Operacion valida.!")
+//     }
+// };
 
-let continuar;
+// let continuar;
 
-do {
-    let numeroA = parseFloat(prompt("Ingrese el Numero A"));
-    let numeroB = parseFloat(prompt("Ingrese el Numero B"));
-    let operacion = prompt("Ingrese la operacion");
+// do {
+//     let numeroA = parseFloat(prompt("Ingrese el Numero A"));
+//     let numeroB = parseFloat(prompt("Ingrese el Numero B"));
+//     let operacion = prompt("Ingrese la operacion");
 
-    // Mostrar el resultado
-    console.log("Felicitaciones, el resultado es: " + calcular(operacion, numeroA, numeroB));
-    // Confirmar si sigue o no
-    continuar = prompt("¿Desea continuar? (si/no)").toLowerCase();
-} while (continuar === 'si');
+//     // Mostrar el resultado
+//     console.log("Felicitaciones, el resultado es: " + calcular(operacion, numeroA, numeroB));
+//     // Confirmar si sigue o no
+//     continuar = prompt("¿Desea continuar? (si/no)").toLowerCase();
+// } while (continuar === 'si');
 
-console.log("Gracias por usar la Calculadora");
+// console.log("Gracias por usar la Calculadora");
 
+// Ejemplo de uso de callback
+
+// function saludo(nombre){
+//     console.log("Hola " + nombre);
+// };
+
+// function procesarIngresoDelNombre(callback) {
+//     const nombre = prompt("Ingrese su Nombre");
+//     callback(saludo(nombre));
+// }
+
+// procesarIngresoDelNombre(saludo)
