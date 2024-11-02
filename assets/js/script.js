@@ -221,13 +221,13 @@
 
 // Ejemplo de uso de callback
 
-// function saludo(nombre){
-//     console.log("Hola " + nombre);
-// };
+function saludo(nombre){
+    console.log("Hola " + nombre);
+};
 
-// function procesarIngresoDelNombre(callback) {
-//     const nombre = prompt("Ingrese su Nombre");
-//     callback(saludo(nombre));
-// }
+function procesarIngresoDelNombre(callback) {
+    const nombre = prompt("Ingrese su Nombre");
+    callback(nombre);
+}
 
-// procesarIngresoDelNombre(saludo)
+procesarIngresoDelNombre(saludo)
