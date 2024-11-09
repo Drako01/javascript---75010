@@ -71,14 +71,14 @@
 
 class Producto {
 
-    constructor(id, nombre, precio){
+    constructor(id, nombre, precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
     }
 
-    sumarIva(){
-        this.precio =  parseFloat((this.precio * 1.21).toFixed(2));
+    sumarIva() {
+        this.precio = parseFloat((this.precio * 1.21).toFixed(2));
     }
 }
 
@@ -90,7 +90,7 @@ productos.push(new Producto(4, "Coca Cola", 1800.65));
 productos.push(new Producto(5, "Pepsi", 1750));
 
 // for of
-for(const producto of productos){ // Por cada producto del Array productos
+for (const producto of productos) { // Por cada producto del Array productos
     producto.sumarIva();
     console.log(producto);
 }
