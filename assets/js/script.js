@@ -92,11 +92,71 @@ class Animal {
 
 const perrito = new Animal("Perro", "Daisy", 4, "Yorky", "Beige");
 const gatito = new Animal("Gato", "Michi", 2, "Cacrico", "Blanco");
+const gatit2 = new Animal("Gato", "Michifus", 2, "Cacrico", "Blanco y Negro");
+const arrayAnimales = [perrito, gatito, gatit2]; // Array de Objetos
+console.log(arrayAnimales)
+// console.log(perrito);
+// console.log(perrito.color);
+// console.log(gatito);
 
-console.log(perrito);
-console.log(gatito);
+// perrito.caminar();
+// gatito.caminar();
 
-perrito.caminar();
-gatito.caminar();
+// caminar();
 
-caminar();
+let mensaje = "Hola Soy mensaje1";
+
+// localStorage.setItem("mensaje1", mensaje);
+// localStorage.setItem("mensaje2", "Hola a todos desde el Local Storage");
+// sessionStorage.setItem("mensaje1", mensaje);
+// sessionStorage.setItem("mensaje2", "Hola a todos desde el Local Storage");
+
+// console.log(localStorage.getItem("mensaje1"));
+
+// localStorage.setItem("numero" , 1);
+// localStorage.setItem("boolean" , true);
+// localStorage.setItem("Perro", perrito);
+// localStorage.setItem("Perro", JSON.stringify(perrito)); // Convertirlo en String, para ello uso el Formato JSON
+// localStorage.setItem("Gato", JSON.stringify(gatito)); 
+// stringify convierte a un Objeto en formato String
+// console.log(typeof(perrito)); // Un Objeto
+// console.log(typeof(JSON.stringify(perrito))); // Es un String
+
+const perroComoString = localStorage.getItem("Perro");
+// console.log(typeof(perroComoString)); // Es un String
+
+
+const perroComoObject = JSON.parse(localStorage.getItem("Perro"));
+// console.log(typeof(perroComoObject));
+// console.log(perroComoObject);
+// console.log(perroComoObject.color);
+
+// localStorage.removeItem("numero");
+// localStorage.removeItem("boolean");
+
+// localStorage.clear();
+
+// console.log(typeof(arrayAnimales))
+
+// localStorage.setItem("Animales", JSON.stringify(arrayAnimales));
+
+for (let i = 0; i < localStorage.length; i++){
+    let clave = localStorage.key(i);
+    console.log("Clave: " + clave + "\nValor: " + localStorage.getItem(clave));
+}
+
+const guardarEnElLocalStorage = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+}
+
+// localStorage.setItem("Perro", JSON.stringify(perrito)); // Convertirlo en String, para ello uso el Formato JSON
+// localStorage.setItem("Gato", JSON.stringify(gatito)); 
+
+// localStorage.setItem("Animales", JSON.stringify(arrayAnimales));
+
+// guardarEnElLocalStorage("Perro", JSON.stringify(perrito));
+// guardarEnElLocalStorage("Gato", JSON.stringify(gatito));
+
+for (const animal of arrayAnimales) {
+    guardarEnElLocalStorage(animal.tipo, JSON.stringify(animal));
+}
