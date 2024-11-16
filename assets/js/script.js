@@ -1,96 +1,102 @@
-// Array
-
-// const miArray = [1, 2, 5, 56, 0, -8, 1];
-// console.log(typeof(miArray));
-// miArray.push(555); // Agrega el 555 en el ultimo lugar
-// miArray.pop(); // Elimina al 555
-// miArray.unshift(0); // Agrega el 0 en el 1er Lugar (Pero no es recomendable)
-// miArray.shift(); // Elimina el 1er elementod del Array (Pero no es recomendable)
-// miArray = 5;
-// console.log(typeof(miArray));
-// console.log(miArray);
-// console.log(miArray.length);
-
-// for(let i = 0; i < miArray.length; i++){
-//     console.log(i + ": " + miArray[i]);
+// Objetos
+// const persona1 = {
+//     id:1,
+//     nombre: "Francisco",
+//     apellido: "Arancibia",
+//     edad: 20,
+//     email: "francisco@email.com"
+// }
+// const persona2 = {
+//     nombre: "Gaston",
+//     apellido: "Zarate",
+//     edad: 22,
+//     email: "gaston@email.com"
 // }
 
-// console.log(miArray.join(", "));
-// console.log(typeof(miArray.join(", ")));
-// console.log(miArray.join(" "));
+// console.log(persona1)
+// console.log(persona2)
 
-// console.log(miArray.indexOf(560)); // El -1 indica que el valor no existe en el Array
-// console.log(miArray.includes(56)); 
-// console.log(miArray.includes(560)); 
-
-// const stringArray = ["Hola", "mundo", "CoderHouse"];
-// for(let i = 0; i < stringArray.length; i++){
-//     console.log(i + ": " + stringArray[i]);
+// function Persona(persona){ // Pasandole el Objeto Literal
+//     this.id = persona.id;
+//     this.nombre = persona.nombre;
+//     this.apellido = persona.apellido;
+//     this.edad = persona.edad;
+//     this.email = persona.email;
 // }
 
-// console.log(stringArray.join(", "));
-// console.log(stringArray.indexOf("560")); /// Me imprime el indice en formato numero
-// console.log(stringArray.includes("CoderHouse"));
-// console.log(stringArray.includes("560"));
+// const personaLiteral = new Persona({
+//     id:1,
+//     nombre: "Francisco",
+//     apellido: "Arancibia",
+//     edad: 20,
+//     email: "francisco@email.com"
+// })
+// console.log(personaLiteral)
+
+// Funciones Constructoras
+// function Persona(id, nombre, apellido, edad, email){
+//     this.id = id;
+//     this.nombre = nombre;
+//     this.apellido = apellido;
+//     this.edad = edad;
+//     this.email = email;
+// }
+
+// const francisco = new Persona(1, "Francisco", "Arancibia", 20, "francisco@mail.com ");
+// console.log(francisco);
+
+// francisco.nombre = "Francisco David";
+// francisco["edad"] = 22;
+
+// function Gato(nombre, edad, raza, color){
+//     this.nombre = nombre;
+//     this.edad = edad;
+//     this.raza = raza;
+//     this.color = color;
+// }
+
+// function Perro(nombre, edad, raza, color){
+//     this.nombre = nombre;
+//     this.edad = edad;
+//     this.raza = raza;
+//     this.color = color;
+// }
+
+// const gatito1 = new Gato("Michi", 2, "Cacrico", "Blanco");
+// const gatito2 = new Gato("Tomy", 2, "Siames", "Gris");
+
+// const perrito1 = new Perro("Daisy", 4, "Yorky", "Beige");
+
+// console.log(gatito1);
+// console.log(gatito2);
+// console.log(perrito1);
 
 
-// const stringArray = ["Hola", "mundo", "CoderHouse"];
+function caminar(){ // Funcion es Global y es accesible desde cualquier lado
+    console.log("Mi Animal esta caminado.!");
+}
 
-// console.log(stringArray.sort()); // Ordena Ascendentemente (Alfabeticamente)
-// console.log(stringArray.sort().reverse()); // Ordena Descendentemente (Alfabeticamente)
-
-// const miArray = [1, 2, 5, 56, 0, -8, 1];
-
-// console.log(miArray.sort());
-// console.log(miArray.sort().reverse());
-
-// Objeto
-// const productos = [
-//     {
-//         id: 1,
-//         nombre: "Azucar",
-//         precio: 1080.50
-//     },
-//     {
-//         id: 2,
-//         nombre: "Yerba",
-//         precio: 980.50
-//     },
-//     {
-//         id: 3,
-//         nombre: "Café",
-//         precio: 3500.50
-//     }
-// ];
-
-// console.log(productos[0]);
-// console.log(productos[0].id)
-// console.log(productos[0].nombre)
-// console.log(productos[0].precio)
-// productos.push({ id: 4, nombre: "Coca Cola", precio: 1200, descripcion: "Fria" }); // Objeto literal
-
-class Producto {
-
-    constructor(id, nombre, precio) {
-        this.id = id;
+class Animal {
+    constructor(tipo, nombre, edad, raza, color) {
+        this.tipo = tipo;
         this.nombre = nombre;
-        this.precio = precio;
+        this.edad = edad;
+        this.raza = raza;
+        this.color = color;
     }
 
-    sumarIva() {
-        this.precio = parseFloat((this.precio * 1.21).toFixed(2));
+    caminar() { // Es un metodo Propio de la Clase, y solo se accede desde cada instancia de Ella
+        console.log("Mi " + this.tipo + " " + this.nombre + " esta caminado.!");
     }
 }
 
-const productos = [];
-productos.push(new Producto(1, "Azucar", 1250.50));
-productos.push(new Producto(2, "Yerba", 1350.65));
-productos.push(new Producto(3, "Café", 3250.65));
-productos.push(new Producto(4, "Coca Cola", 1800.65));
-productos.push(new Producto(5, "Pepsi", 1750));
+const perrito = new Animal("Perro", "Daisy", 4, "Yorky", "Beige");
+const gatito = new Animal("Gato", "Michi", 2, "Cacrico", "Blanco");
 
-// for of
-for (const producto of productos) { // Por cada producto del Array productos
-    producto.sumarIva();
-    console.log(producto);
-}
+console.log(perrito);
+console.log(gatito);
+
+perrito.caminar();
+gatito.caminar();
+
+caminar();
