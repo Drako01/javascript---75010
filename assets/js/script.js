@@ -160,4 +160,3 @@
 // for (const animal of arrayAnimales) {
 //     guardarEnElLocalStorage(animal.tipo, JSON.stringify(animal));
 // }
-
