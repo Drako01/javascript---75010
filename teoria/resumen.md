@@ -40,10 +40,24 @@ function operarNumeros(a, b, operacion) {
 }
 
 const suma = (x, y) => x + y;
+const resta = (x, y) => x - y;
 const multiplicacion = (x, y) => x * y;
+const division = (x, y) => {
+    if (y === 0) {
+        return "Error: División por cero no permitida";
+    }
+    return x / y;
+};
 
-console.log(operarNumeros(2, 3, suma));          // Salida: 5
-console.log(operarNumeros(2, 3, multiplicacion)); // Salida: 6
+// Probando las operaciones
+console.log(operarNumeros(6, 3, suma));          // Salida: 9
+console.log(operarNumeros(6, 3, resta));         // Salida: 3
+console.log(operarNumeros(6, 3, multiplicacion)); // Salida: 18
+console.log(operarNumeros(6, 3, division));      // Salida: 2
+
+// Caso especial: división por 0
+console.log(operarNumeros(6, 0, division));      // Salida: "Error: División por cero no permitida"
+
 ```
 Aquí, `operarNumeros` es de orden superior porque recibe una función (`suma` o `multiplicacion`) como argumento.
 
