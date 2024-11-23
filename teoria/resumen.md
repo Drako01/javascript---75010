@@ -485,8 +485,8 @@ console.log(cuadrados);
 ```javascript
 const fechas = ["2024-11-23", "2024-12-01", "2024-12-25"];
 const fechasFormateadas = fechas.map((fecha) => {
-    const [año, mes, día] = fecha.split("-");
-    return `${día}/${mes}/${año}`;
+    const [anio, mes, día] = fecha.split("-");
+    return `${día}/${mes}/${anio}`;
 });
 
 console.log(fechasFormateadas); 
