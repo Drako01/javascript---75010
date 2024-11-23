@@ -199,6 +199,22 @@ Array original:
 - `(a, b) => b - a`: Orden descendente (de mayor a menor).
 
 
+### Finalmente quedará algo así:
+
+```js
+const numeros = [40, 1, 5, 200];
+const orden = (a, b) => a - b;
+numeros.sort(orden);
+console.log(numeros);
+```
+#### o así:
+
+```js
+const numeros = [40, 1, 5, 200];
+numeros.sort((a, b) => a - b);
+console.log(numeros);
+```
+
 ---
 
 ## Otros Metodos de Array
