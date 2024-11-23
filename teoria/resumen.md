@@ -313,6 +313,7 @@ console.log(`Número de mayores de edad: ${mayoresDeEdad}`);
 ---
 
 ### **5. Crear un objeto basado en un array (usando índice)**
+
 ```javascript
 const frutas = ["manzana", "plátano", "cereza", "durazno"];
 const inventario = {};
@@ -322,8 +323,72 @@ frutas.forEach((fruta, indice) => {
 });
 
 console.log(inventario);
-// Salida: { 0: 'manzana', 1: 'plátano', 2: 'cereza', 3: 'durazno' }
 ```
+
+### Paso 1: Declaración del array `frutas`
+```javascript
+const frutas = ["manzana", "plátano", "cereza", "durazno"];
+```
+- Aquí estamos creando un **array** llamado `frutas`, que contiene 4 elementos: `"manzana"`, `"plátano"`, `"cereza"`, y `"durazno"`. Cada uno de estos elementos es una cadena de texto (string).
+
+### Paso 2: Declaración del objeto `inventario`
+```javascript
+const inventario = {};
+```
+- Aquí estamos creando un **objeto vacío** llamado `inventario`. Este objeto es donde vamos a almacenar las frutas, pero con sus **índices** como claves, en lugar de ser simplemente un array.
+
+### Paso 3: Uso del método `forEach` para recorrer el array
+```javascript
+frutas.forEach((fruta, indice) => {
+    inventario[indice] = fruta; // Asignar el índice como clave
+});
+```
+- **`frutas.forEach(...)`**: Este método **`forEach`** recorre el array `frutas`, y ejecuta la función que le pasamos en cada elemento del array. En este caso, la función que pasamos es una **función flecha**.
+- La función que pasa a `forEach` tiene dos parámetros:
+  1. **`fruta`**: Este es el valor del elemento actual del array. En cada iteración del ciclo, `fruta` tomará el valor de la fruta en el array (primero `"manzana"`, luego `"plátano"`, etc.).
+  2. **`indice`**: Este es el índice o la posición en el array del elemento que estamos procesando. Por ejemplo, para `"manzana"`, el índice será `0`, para `"plátano"` será `1`, y así sucesivamente.
+
+- **`inventario[indice] = fruta;`**: Dentro de la función, estamos utilizando el índice como clave para agregar un nuevo par **clave-valor** al objeto `inventario`.
+  - El **índice** (como clave) es el número que representa la posición de la fruta en el array (por ejemplo, `0`, `1`, `2`, `3`).
+  - El **valor** es el nombre de la fruta (por ejemplo, `"manzana"`, `"plátano"`, etc.).
+  
+En cada iteración del `forEach`, estamos añadiendo una nueva propiedad al objeto `inventario`. Esto es lo que ocurre en cada paso:
+
+1. Para la fruta `"manzana"`, en el índice `0`:  
+   `inventario[0] = "manzana";`
+   
+2. Para la fruta `"plátano"`, en el índice `1`:  
+   `inventario[1] = "plátano";`
+   
+3. Para la fruta `"cereza"`, en el índice `2`:  
+   `inventario[2] = "cereza";`
+   
+4. Para la fruta `"durazno"`, en el índice `3`:  
+   `inventario[3] = "durazno";`
+
+### Paso 4: Resultado final
+
+Después de que el `forEach` haya recorrido todo el array `frutas`, el objeto `inventario` tendrá las siguientes propiedades:
+
+```javascript
+{
+  0: "manzana",
+  1: "plátano",
+  2: "cereza",
+  3: "durazno"
+}
+```
+
+**Explicación del resultado:**
+- El objeto `inventario` ahora tiene 4 propiedades, donde las claves son los índices del array (0, 1, 2, 3) y los valores son los nombres de las frutas correspondientes.
+- En vez de un array, que usa posiciones numéricas automáticas, hemos creado un objeto donde las claves son los índices y los valores son los elementos del array.
+
+### Resumen:
+- **`forEach`** recorre el array `frutas`.
+- En cada iteración, toma el índice y el valor de cada fruta y los usa para agregar una nueva propiedad al objeto `inventario`, donde la clave es el índice y el valor es la fruta.
+- El resultado es un objeto con claves numéricas (los índices) y valores que son las frutas.
+
+
 
 ---
 
