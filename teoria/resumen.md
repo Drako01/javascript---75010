@@ -39,6 +39,8 @@ function operarNumeros(a, b, operacion) {
     return operacion(a, b);
 }
 
+//const operarNumeros = (a, b, operacion) => operacion(a, b);
+
 const suma = (x, y) => x + y;
 const resta = (x, y) => x - y;
 const multiplicacion = (x, y) => x * y;
