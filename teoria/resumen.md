@@ -1,5 +1,114 @@
 # Algo de teoria para complementar.
 
+### **Funciones de Orden Superior (Higher-Order Functions)**
+
+---
+
+### **¿Qué son?**
+Son funciones que **reciben** otras funciones como **argumentos**, **devuelven** una función, o ambas. Estas funciones son una característica clave de la programación funcional y permiten un código más reutilizable, modular y fácil de leer.
+
+---
+
+### **¿Por qué son útiles?**
+1. Facilitan la manipulación de datos.
+2. Permiten escribir código más compacto y expresivo.
+3. Ayudan a abstraer lógica repetitiva.
+
+---
+
+### **Características principales**
+Una función es de orden superior si:
+1. **Recibe otra función como argumento**.
+   Ejemplo: `array.map(callback)`.
+2. **Devuelve otra función como resultado**.
+   Ejemplo: funciones que generan otras funciones.
+
+---
+
+### **Ejemplos comunes de funciones de orden superior**
+1. **`forEach()`**
+2. **`map()`**
+3. **`filter()`**
+4. **`reduce()`**
+
+---
+
+### **Ejemplo 1: Función que recibe otra función como argumento**
+```javascript
+function operarNumeros(a, b, operacion) {
+    return operacion(a, b);
+}
+
+const suma = (x, y) => x + y;
+const multiplicacion = (x, y) => x * y;
+
+console.log(operarNumeros(2, 3, suma));          // Salida: 5
+console.log(operarNumeros(2, 3, multiplicacion)); // Salida: 6
+```
+Aquí, `operarNumeros` es de orden superior porque recibe una función (`suma` o `multiplicacion`) como argumento.
+
+---
+
+### **Ejemplo 2: Función que devuelve otra función**
+```javascript
+function crearMultiplicador(factor) {
+    return function (numero) {
+        return numero * factor;
+    };
+}
+
+const porDos = crearMultiplicador(2);
+const porTres = crearMultiplicador(3);
+
+console.log(porDos(5));  // Salida: 10
+console.log(porTres(5)); // Salida: 15
+```
+En este caso, `crearMultiplicador` es de orden superior porque **devuelve otra función**.
+
+---
+
+### **Ejemplo 3: Uso con arrays**
+Las funciones como `map`, `filter` y `reduce` son ejemplos clásicos de funciones de orden superior porque toman una **función callback** para operar sobre los elementos de un array.
+
+#### **`map()`**
+Aplica una transformación a cada elemento del array.
+```javascript
+const numeros = [1, 2, 3, 4];
+const dobles = numeros.map((num) => num * 2);
+console.log(dobles); // Salida: [2, 4, 6, 8]
+```
+
+#### **`filter()`**
+Filtra elementos según una condición.
+```javascript
+const numeros = [1, 2, 3, 4];
+const pares = numeros.filter((num) => num % 2 === 0);
+console.log(pares); // Salida: [2, 4]
+```
+
+#### **`reduce()`**
+Combina los elementos del array en un único valor.
+```javascript
+const numeros = [1, 2, 3, 4];
+const suma = numeros.reduce((acum, num) => acum + num, 0);
+console.log(suma); // Salida: 10
+```
+
+---
+
+### **Resumen visual**
+
+| **Caso**                      | **Explicación**                              | **Ejemplo**                                      |
+|-------------------------------|----------------------------------------------|------------------------------------------------|
+| Recibe una función            | Toma otra función como argumento.           | `array.map((x) => x * 2)`                      |
+| Devuelve una función          | Retorna otra función para uso posterior.    | `crearMultiplicador(3)` devuelve `(x) => x * 3`|
+| Array HOF (`map`, `filter`)   | Operan sobre arrays con una función.        | Ver ejemplos de `map`, `filter`, `reduce`.     |
+
+
+--- 
+
+## Funciones mas comunes:
+
 ### La función `sort`
 El método `sort` en JavaScript se utiliza para ordenar los elementos de un array. Por defecto, lo hace considerando los elementos como cadenas de texto, lo que puede generar resultados inesperados al trabajar con números.
 
