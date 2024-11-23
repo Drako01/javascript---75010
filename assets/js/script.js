@@ -72,29 +72,29 @@
 // console.log(perrito1);
 
 
-function caminar(){ // Funcion es Global y es accesible desde cualquier lado
-    console.log("Mi Animal esta caminado.!");
-}
+// function caminar(){ // Funcion es Global y es accesible desde cualquier lado
+//     console.log("Mi Animal esta caminado.!");
+// }
 
-class Animal {
-    constructor(tipo, nombre, edad, raza, color) {
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.raza = raza;
-        this.color = color;
-    }
+// class Animal {
+//     constructor(tipo, nombre, edad, raza, color) {
+//         this.tipo = tipo;
+//         this.nombre = nombre;
+//         this.edad = edad;
+//         this.raza = raza;
+//         this.color = color;
+//     }
 
-    caminar() { // Es un metodo Propio de la Clase, y solo se accede desde cada instancia de Ella
-        console.log("Mi " + this.tipo + " " + this.nombre + " esta caminado.!");
-    }
-}
+//     caminar() { // Es un metodo Propio de la Clase, y solo se accede desde cada instancia de Ella
+//         console.log("Mi " + this.tipo + " " + this.nombre + " esta caminado.!");
+//     }
+// }
 
-const perrito = new Animal("Perro", "Daisy", 4, "Yorky", "Beige");
-const gatito = new Animal("Gato", "Michi", 2, "Cacrico", "Blanco");
-const gatit2 = new Animal("Gato", "Michifus", 2, "Cacrico", "Blanco y Negro");
-const arrayAnimales = [perrito, gatito, gatit2]; // Array de Objetos
-console.log(arrayAnimales)
+// const perrito = new Animal("Perro", "Daisy", 4, "Yorky", "Beige");
+// const gatito = new Animal("Gato", "Michi", 2, "Cacrico", "Blanco");
+// const gatit2 = new Animal("Gato", "Michifus", 2, "Cacrico", "Blanco y Negro");
+// const arrayAnimales = [perrito, gatito, gatit2]; // Array de Objetos
+// console.log(arrayAnimales)
 // console.log(perrito);
 // console.log(perrito.color);
 // console.log(gatito);
@@ -104,7 +104,7 @@ console.log(arrayAnimales)
 
 // caminar();
 
-let mensaje = "Hola Soy mensaje1";
+// let mensaje = "Hola Soy mensaje1";
 
 // localStorage.setItem("mensaje1", mensaje);
 // localStorage.setItem("mensaje2", "Hola a todos desde el Local Storage");
@@ -122,11 +122,11 @@ let mensaje = "Hola Soy mensaje1";
 // console.log(typeof(perrito)); // Un Objeto
 // console.log(typeof(JSON.stringify(perrito))); // Es un String
 
-const perroComoString = localStorage.getItem("Perro");
+// const perroComoString = localStorage.getItem("Perro");
 // console.log(typeof(perroComoString)); // Es un String
 
 
-const perroComoObject = JSON.parse(localStorage.getItem("Perro"));
+// const perroComoObject = JSON.parse(localStorage.getItem("Perro"));
 // console.log(typeof(perroComoObject));
 // console.log(perroComoObject);
 // console.log(perroComoObject.color);
@@ -140,14 +140,14 @@ const perroComoObject = JSON.parse(localStorage.getItem("Perro"));
 
 // localStorage.setItem("Animales", JSON.stringify(arrayAnimales));
 
-for (let i = 0; i < localStorage.length; i++){
-    let clave = localStorage.key(i);
-    console.log("Clave: " + clave + "\nValor: " + localStorage.getItem(clave));
-}
+// for (let i = 0; i < localStorage.length; i++){
+//     let clave = localStorage.key(i);
+//     console.log("Clave: " + clave + "\nValor: " + localStorage.getItem(clave));
+// }
 
-const guardarEnElLocalStorage = (clave, valor) => {
-    localStorage.setItem(clave, valor);
-}
+// const guardarEnElLocalStorage = (clave, valor) => {
+//     localStorage.setItem(clave, valor);
+// }
 
 // localStorage.setItem("Perro", JSON.stringify(perrito)); // Convertirlo en String, para ello uso el Formato JSON
 // localStorage.setItem("Gato", JSON.stringify(gatito)); 
@@ -157,6 +157,7 @@ const guardarEnElLocalStorage = (clave, valor) => {
 // guardarEnElLocalStorage("Perro", JSON.stringify(perrito));
 // guardarEnElLocalStorage("Gato", JSON.stringify(gatito));
 
-for (const animal of arrayAnimales) {
-    guardarEnElLocalStorage(animal.tipo, JSON.stringify(animal));
-}
+// for (const animal of arrayAnimales) {
+//     guardarEnElLocalStorage(animal.tipo, JSON.stringify(animal));
+// }
+
