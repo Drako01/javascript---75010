@@ -245,6 +245,110 @@ numeros.forEach((num) => {
 // 5
 ```
 
+### Algunos ejemplos que usan `forEach` para diferentes casos, incluyendo uno donde se utiliza el índice:
+
+---
+
+### **1. Recorrer un array e imprimir cada elemento**
+```javascript
+const frutas = ["manzana", "plátano", "cereza", "durazno"];
+
+frutas.forEach((fruta) => {
+    console.log(`Fruta: ${fruta}`);
+});
+// Salida:
+// Fruta: manzana
+// Fruta: plátano
+// Fruta: cereza
+// Fruta: durazno
+```
+
+---
+
+### **2. Uso del índice**
+```javascript
+const frutas = ["manzana", "plátano", "cereza", "durazno"];
+
+frutas.forEach((fruta, indice) => {
+    console.log(`Índice: ${indice}, Fruta: ${fruta}`);
+});
+// Salida:
+// Índice: 0, Fruta: manzana
+// Índice: 1, Fruta: plátano
+// Índice: 2, Fruta: cereza
+// Índice: 3, Fruta: durazno
+```
+
+---
+
+### **3. Modificar elementos dentro del array**
+Aunque `forEach` no devuelve un nuevo array, puedes modificar los elementos directamente:
+```javascript
+const numeros = [10, 20, 30, 40];
+
+numeros.forEach((num, indice, array) => {
+    array[indice] = num * 2; // Duplicar cada número
+});
+
+console.log(numeros); // Salida: [20, 40, 60, 80]
+```
+
+---
+
+### **4. Contar elementos según una condición**
+```javascript
+const edades = [12, 17, 19, 21, 15];
+let mayoresDeEdad = 0;
+
+edades.forEach((edad) => {
+    if (edad >= 18) {
+        mayoresDeEdad++;
+    }
+});
+
+console.log(`Número de mayores de edad: ${mayoresDeEdad}`); 
+// Salida: Número de mayores de edad: 2
+```
+
+---
+
+### **5. Crear un objeto basado en un array (usando índice)**
+```javascript
+const frutas = ["manzana", "plátano", "cereza", "durazno"];
+const inventario = {};
+
+frutas.forEach((fruta, indice) => {
+    inventario[indice] = fruta; // Asignar el índice como clave
+});
+
+console.log(inventario);
+// Salida: { 0: 'manzana', 1: 'plátano', 2: 'cereza', 3: 'durazno' }
+```
+
+---
+
+### **6. Acumular valores en un contador**
+```javascript
+const numeros = [5, 10, 15, 20];
+let suma = 0;
+
+numeros.forEach((num) => {
+    suma += num; // Sumar cada número al total
+});
+
+console.log(`La suma total es: ${suma}`); 
+// Salida: La suma total es: 50
+```
+
+---
+
+### **Notas clave sobre `forEach`:**
+- **No devuelve un nuevo array:** Para eso, usa `map`.
+- Podes acceder a tres parámetros: el elemento, el índice y el array completo.
+- Es ideal para realizar operaciones **por cada elemento** sin necesidad de un valor de retorno.
+
+
+
 ---
 
 ## 2. **`filter()`**
@@ -280,14 +384,149 @@ const nuevoArray = array.map((elemento, índice, array) => {
 });
 ```
 
-### **Ejemplo:**
-Multiplicar cada número por 2:
+Dejo varios ejemplos prácticos con el método **`map()`**, que son ideales para transformar arrays:
+
+---
+
+### **1. Multiplicar cada número por 2**
 ```javascript
 const numeros = [1, 2, 3, 4, 5];
 const dobles = numeros.map((num) => num * 2);
-console.log(dobles);
-// Salida: [2, 4, 6, 8, 10]
+
+console.log(dobles); // Salida: [2, 4, 6, 8, 10]
 ```
+**Explicación:**  
+- `map` crea un nuevo array donde cada elemento se multiplica por 2.
+
+---
+
+### **2. Convertir a mayúsculas**
+```javascript
+const frutas = ["manzana", "plátano", "cereza", "durazno"];
+const frutasMayusculas = frutas.map((fruta) => fruta.toUpperCase());
+
+console.log(frutasMayusculas); 
+// Salida: ['MANZANA', 'PLÁTANO', 'CEREZA', 'DURAZNO']
+```
+
+---
+
+### **3. Transformar objetos**
+```javascript
+const personas = [
+    { nombre: "Juan", edad: 25 },
+    { nombre: "María", edad: 30 },
+    { nombre: "Pedro", edad: 20 },
+];
+
+const nombres = personas.map((persona) => persona.nombre);
+
+console.log(nombres); 
+// Salida: ['Juan', 'María', 'Pedro']
+```
+**Explicación:**  
+- Aquí `map` extrae los nombres de un array de objetos.
+
+---
+
+### **4. Calcular descuentos**
+```javascript
+const precios = [100, 200, 300];
+const preciosConDescuento = precios.map((precio) => precio * 0.9);
+
+console.log(preciosConDescuento); 
+// Salida: [90, 180, 270]
+```
+**Explicación:**  
+- Se calcula un 10% de descuento para cada precio y se genera un nuevo array con los valores.
+
+---
+
+### **5. Añadir índices a los elementos**
+```javascript
+const frutas = ["manzana", "plátano", "cereza"];
+const frutasConIndices = frutas.map((fruta, indice) => `${indice + 1}. ${fruta}`);
+
+console.log(frutasConIndices);
+// Salida: ['1. manzana', '2. plátano', '3. cereza']
+```
+**Explicación:**  
+- Se usa el índice para agregar un número al principio de cada elemento.
+
+---
+
+### **6. Crear nuevos objetos**
+```javascript
+const numeros = [1, 2, 3, 4];
+const objetosNumeros = numeros.map((num) => ({ valor: num }));
+
+console.log(objetosNumeros);
+// Salida: [{ valor: 1 }, { valor: 2 }, { valor: 3 }, { valor: 4 }]
+```
+**Explicación:**  
+- Cada número del array original se convierte en un objeto con una clave `valor`.
+
+---
+
+### **7. Elevar al cuadrado**
+```javascript
+const numeros = [2, 3, 4, 5];
+const cuadrados = numeros.map((num) => num ** 2);
+
+console.log(cuadrados); 
+// Salida: [4, 9, 16, 25]
+```
+**Explicación:**  
+- Eleva cada número del array original al cuadrado.
+
+---
+
+### **8. Cambiar formato de fecha**
+```javascript
+const fechas = ["2024-11-23", "2024-12-01", "2024-12-25"];
+const fechasFormateadas = fechas.map((fecha) => {
+    const [año, mes, día] = fecha.split("-");
+    return `${día}/${mes}/${año}`;
+});
+
+console.log(fechasFormateadas); 
+// Salida: ['23/11/2024', '01/12/2024', '25/12/2024']
+```
+**Explicación:**  
+- `map` transforma el formato de fecha de `YYYY-MM-DD` a `DD/MM/YYYY`.
+
+---
+
+### **9. Convertir valores booleanos a texto**
+```javascript
+const booleanos = [true, false, true, false];
+const texto = booleanos.map((valor) => (valor ? "Sí" : "No"));
+
+console.log(texto); 
+// Salida: ['Sí', 'No', 'Sí', 'No']
+```
+
+---
+
+### **10. Operar con índices**
+```javascript
+const numeros = [10, 20, 30];
+const resultado = numeros.map((num, indice) => num + indice);
+
+console.log(resultado);
+// Salida: [10, 21, 32]
+```
+**Explicación:**  
+- Se suma cada número con su índice en el array.
+
+---
+
+### Resumen sobre **`map()`**:
+1. **Crea un nuevo array** (no modifica el original).
+2. Opera sobre **cada elemento** y **retorna el valor transformado**.
+3. Ideal para **transformaciones** o **mapear estructuras de datos**. 
+
+
 
 ---
 
