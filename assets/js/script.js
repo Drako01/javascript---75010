@@ -8,7 +8,7 @@ title.innerText = titulo;
 const cuerpo = document.body;
 // console.log(cuerpo);
 
-// let contenedores = document.getElementsByClassName('contenedor'); // Array de contenedores
+let contenedores = document.getElementsByClassName('contenedor'); // Array de contenedores
 // console.log(contenedores);
 
 // contenedores[2].innerHTML = "<h2>Contenedor <strong>3</strong></h2>";
@@ -101,4 +101,87 @@ botonClick.addEventListener('click', () => {
     // console.log("Hice Click");
     cuerpo.style.backgroundColor = 'blue';
     cuerpo.style.color = 'white';
+})
+
+
+contenedores[0].addEventListener('mouseover', () => {
+    let h4C1 = contenedores[0].querySelector('h4');
+    h4C1.style.color = "green";
+
+})
+
+contenedores[1].addEventListener('mouseover', () => {
+    let h4C1 = contenedores[1].querySelector('h4');
+    h4C1.style.color = "blue";
+
+})
+contenedores[2].addEventListener('mouseover', () => {
+    let h4C1 = contenedores[2].querySelector('h4');
+    h4C1.style.color = "red";
+
+})
+contenedores[3].addEventListener('mouseover', () => {
+    let h4C1 = contenedores[3].querySelector('h4');
+    h4C1.style.color = "yellow";
+
+})
+
+
+
+const arrayDeObjetos = [
+    {
+        id: 1,
+        nombre: "Azucar",
+        precio: 1250,
+        stock: 1500
+    },
+    {
+        id: 2,
+        nombre: "Yerba",
+        precio: 1850,
+        stock: 1000
+    },
+    {
+        id: 3,
+        nombre: "Cafe",
+        precio: 6500,
+        stock: 600
+    },
+    {
+        id: 4,
+        nombre: "Coca Cola",
+        precio: 1890,
+        stock: 12000
+    },
+    {
+        id: 5,
+        nombre: "Pepsi",
+        precio: 1750,
+        stock: 13000
+    }
+];
+
+
+let botonAgregarObjeto = document.querySelectorAll('.button_grey')[1];
+
+let indiceObjeto = 0;
+
+botonAgregarObjeto.addEventListener('click', () => {
+
+    let listaPersonas = document.getElementById('personas');
+
+    if (indiceObjeto < arrayDeObjetos.length) {
+        let item = document.createElement('li');
+
+        const objeto = arrayDeObjetos[indiceObjeto];
+
+        item.textContent = `ID: ${objeto.id}, Nombre: ${objeto.nombre}, Precio: $${objeto.precio}.- , Stock: ${objeto.stock} unidades.`;
+
+        listaPersonas.appendChild(item);
+
+        indiceObjeto++;
+
+    } else {
+        alert("Todos los productos fueron agregados.!")
+    }
 })
