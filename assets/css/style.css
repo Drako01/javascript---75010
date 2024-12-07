@@ -54,8 +54,7 @@ li {
     list-style: none;
 }
 
-h1,
-h3 {
+h1 {
     text-align: center;
     margin-top: 1.2rem;
 }
@@ -68,92 +67,6 @@ footer {
 
 footer p {
     text-align: center;
-}
-
-.mainContact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mainContact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 600px;
-    gap: 1rem;
-    padding: 2rem;
-}
-
-.mainContact form>* {
-    min-width: calc(100% - 1rem);
-    height: 2rem;
-    font-size: 1.1rem;
-}
-
-.mainContact>div>h4 {
-    padding: 2rem;
-    font-size: 2rem;
-    color: blue;
-}
-
-body {
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-    background-color: black;
-    color: white;
-}
-
-.line {
-    width: 100%;
-    height: 4px;
-    border-radius: 50%;
-    background-color: #c2c2c2;
-}
-
-#cart,
-#product-list {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#product-list>div {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 2rem);
-}
-
-.cart_title {
-    background-color: #c2c2c2;
-    height: 1.5rem;
-}
-
-.button_grey {
-    background-color: #c2c2c2;
-    height: 2rem;
-    min-width: 6rem;
-    padding: .25rem;
-    border: none;
-    border-radius: .25rem;
-    cursor: pointer;
-    margin: .25rem;
-}
-
-.button_grey:hover {
-    background-color: #fff;
-    border: 1px solid #c2c2c2;
 }
 
 
@@ -180,7 +93,7 @@ body.dark-mode {
     justify-content: center;
     overflow: hidden;
     padding: 2rem;
-    width: 840px;
+    width: 1080px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -193,8 +106,8 @@ body.dark-mode {
 }
 
 .slide li img {
-    width: 840px;
-    height: 480px;
+    width: 1080px;
+    height: 640px;
     border-radius: 1rem;
 }
 
@@ -206,37 +119,6 @@ body.dark-mode {
     cursor: pointer;
     padding: 10px;
 }
-
-#error_carrito {
-    padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-#error_carrito p {
-    width: 600px;
-    background-color: #c2c2c2;
-    font-size: 1.5rem;
-    padding: 1rem;
-    text-align: center;
-    border-radius: .5rem;
-}
-
-/* .swal2-styled{
-    background-color: #c2c2c2 !important;
-    width: 6rem ;
-}
-
-.swal2-timer-progress-bar {
-    height: 1rem !important;
-    background-color: blue !important;
-}
-
-
-.swiper {
-    width: 600px;
-    height: 300px;
-} */
 
 .titulo {
     text-align: center;
