@@ -8,7 +8,24 @@ navegacion.appendChild(nav);
 nav.appendChild(ul);
 navegacion.className ='navbar';
 
-const links = ["Index", "products", "Contact"];
+// const links = ["Index", "products", "Contact"];
+
+const links = [
+    {
+        link: "index",
+        name: "Inicio"
+    },
+    {
+        link: "products",
+        name: "Productos"
+    },
+    {
+        link: "contact",
+        name: "Contacto"
+    }
+
+]
+
 const liImagen = document.createElement('li');
 const img = document.createElement('img');
 const ORIGEN = document.createElement('a');
@@ -23,7 +40,7 @@ ul.appendChild(liImagen);
 
 for (const link of links){
     const li =document.createElement('li');
-    li.innerHTML = `<a href="${link.toLowerCase()}.html">${link}</a>`;
+    li.innerHTML = `<a href="${link.link.toLowerCase()}.html">${link.name}</a>`;
     ul.appendChild(li);
 }
 

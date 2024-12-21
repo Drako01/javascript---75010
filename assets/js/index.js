@@ -1,77 +1,75 @@
-// console.log("Inicio del Programa");
+const botonId = document.getElementById('boton');
 
-// function funcionA(){
-//     console.log("Entrando a la funcionA");
-//     funcionB();
-//     console.log("Saliendo a la funcionA");
-// }
+const button = document.createElement('button');
 
+button.textContent = "Click Aqui";
+button.style.padding = "0.5rem 1rem";
+button.style.margin = "1rem";
+button.style.cursor = "pointer";
+button.style.backgroundColor = "#c2c2c2";
 
-// function funcionB(){
-//     console.log("Entrando a la funcionB");
-//     console.log("Saliendo a la funcionB");
-// }
+usuario = {
+    nombre: "Alejandro",
+    apellido: "Di Stefano"
+}
 
-// setTimeout(() =>{
-//     console.log("Corriendo el setTimeout (Tarea Asincrona 1 a 0ms)");
-// }, 0)
+botonId.append(button);
 
-// setTimeout(() =>{
-//     console.log("Corriendo el setTimeout (Tarea Asincrona 2 a 3000ms)");
-// }, 3000)
+button.addEventListener('click', () => {
+    // alert("Me hizo Click")
+    // Swal.fire({
+    //     title: "Me hizo Click",
+    //     text: "Cualquier cosa",
+    //     icon: "question",
+    //     imageUrl: "/assets/img/logo.png",
+    //     footer: '<a href="https://coderhouse.com">Llevame a CoderHouse</a>'
+    // });
 
-// setTimeout(() =>{
-//     console.log("Corriendo el setTimeout (Tarea Asincrona 3 a 1000 ms)");
-// }, 1000)
+    // Swal.fire({
+    //     title: "Quiere finalizar la Compra?",
+    //     text: "Recuerde que esto es irreversible!",
+    //     icon: "question",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#3085d6",
+    //     cancelButtonColor: "#d33",
+    //     confirmButtonText: "Si"
+    // }).then((result) => {
+    //     if (result.isConfirmed) {
+    //         Swal.fire({
+    //             title: "Compra confirmada",
+    //             text: "Your file has been deleted.",
+    //             icon: "success"
+    //         });
+    //     }
+    // });
 
-// funcionA();
-
-// console.log("Fin del Programa");
-
-// setInterval(() => {
-//     console.log("Buenos dias");
-// }, 2000);
-
-// let segundos = 0;
-// let minutos = 0;
-// let horas = 0;
-
-// const cronometro = setInterval(() => {
-//     segundos++;
-
-//     if(segundos === 60){
-//         segundos = 0;
-//         minutos++;
-//     }
-
-//     if(minutos === 60){
-//         minutos = 0;
-//         horas++;
-//     }
-
-//     let horasStr = horas.toString();
-//     if(horas < 10) {
-//         horasStr = '0' + horas;
-//     }
-
-//     let minutosStr = minutos.toString();
-//     if(minutos < 10) {
-//         minutosStr = '0' + minutos;
-//     }
-//     let segundosStr = segundos.toString();
-//     if(segundos < 10) {
-//         segundosStr = '0' + segundos;
-//     }
-
-
-//     const tiempo = horasStr + ':' + minutosStr + ':' + segundosStr;
-//     console.log(tiempo);
-// }, 1000);
-
-// setTimeout(() => {
-//     clearInterval(cronometro);
-//     console.log("Cronometro detenido");
-// }, 10000);
-
-
-// Promesas
+    Toastify({
+        text: `${usuario.nombre} ${usuario.apellido} esta OnLine.!`,
+        className: "info",
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        gravity: "top",
+        position: "left",
+        avatar: "/assets/img/logo.png",
+        close: true,
+        // destination: "https://coderhouse.com",
+        onClick: function () {
+            // Toastify({
+            //     text: "El usuario esta OnLine.!",
+            //     position: "right",
+            //     gravity: "bottom",
+            //     duration: 3000, /// Milisegundos > Equivale a 3seg
+            //     offset: {
+            //         x: 300, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            //         y: 150 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            //     },
+            // }).showToast()
+            Swal.fire({
+                title: "Compra confirmada",
+                text: "Solo debe abonar",
+                icon: "success"
+            });
+        },
+    }).showToast();
+})

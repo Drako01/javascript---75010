@@ -33,9 +33,10 @@ const cards = document.getElementById('cards');
 const peticion2 = () => {
 
     fetch('/productos.json')
-        .then((respuesta) => respuesta.json())
+        .then((respuesta) => respuesta.json()) // 
         .then((datos) => {
-            const data = datos;
+            const data = datos; // Array
+            // console.log(data)
             data.forEach((item) => {
                 const card = document.createElement('div');
                 card.innerHTML = `
@@ -59,13 +60,14 @@ const peticion2 = () => {
 }
 // peticion2();
 
-const peticion3 = async () => {
-        const respuesta = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=Samsung') // Usamos Query Params
-        const datos = await respuesta.json()
-        const data = await datos.results
-        for (item of data) {
-            const card = document.createElement('div')
-            card.innerHTML = `
+const peticion3 = async () => { // Funcion asincronica
+    const respuesta = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=Samsung') // Usamos Query Params => Dependo de la velocidad de respuesta del servidor
+    // const respuesta = await fetch('/productos.json') // Respuesta inmediata
+    const datos = await respuesta.json()
+    const data = await datos.results
+    for (item of data) {
+        const card = document.createElement('div')
+        card.innerHTML = `
                             <div class="card" style="width: 18rem; height: 32rem;">
                                 <img class="card-img-top" src=${item.thumbnail} alt=${item.title}/>
                                 <div class="card-body">
@@ -76,7 +78,8 @@ const peticion3 = async () => {
                                 </div>     
                             </div>       
                             `
-            cards.append(card)
-        }
+        cards.append(card)
     }
+}
+
 peticion3();
