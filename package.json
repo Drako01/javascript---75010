@@ -1,0 +1,25 @@
+{
+  "name": "coder-node",
+  "version": "1.0.0",
+  "description": "Proyecto inicial de Node para la comision 75010 de CoderHouse",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drako01/javascript---75010.git#clase_practica_10"
+  },
+  "author": "Alejandro Daniel Di Stefano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Drako01/javascript---75010/issues"
+  },
+  "homepage": "https://github.com/Drako01/javascript---75010/#readme",
+  "dependencies": {
+    "coder-node": "file:",
+    "express": "^4.21.2"
+  }
+}
