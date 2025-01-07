@@ -194,6 +194,23 @@
 //     "Mandarina",
 // ];
 
+
+// const cursos = [
+//     { nombre: "JavaScript", precio: 150000 },
+//     { nombre: "React", precio: 100000 },
+//     { nombre: "Angular", precio: 110000 },
+//     { nombre: "SQL", precio: 90000 },
+//     { nombre: "BackEnd", precio: 350000 },
+// ];
+
+// const cursosObjeto = cursos.reduce((acc, curso) => {
+//     acc[curso.nombre] = curso.precio;
+//     return acc;
+// }, {});
+
+// console.log(cursosObjeto);
+
+
 // const conteo = frutas.reduce((acc, fruta) => {
 //     acc[fruta] = (acc[fruta] || 0) + 1;
 //     return acc;
